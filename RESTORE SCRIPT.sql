@@ -7,14 +7,14 @@ GO
 :SETVAR BackupExtension ".bck0"
 
 DECLARE	@DropPrevious						INT	= 1
-,		@IsDebug							INT = 1
+,		@IsDebug						INT = 1
 ,		@MyMachineName						VARCHAR(100)  = 'BANANAMAN' --Pattern of server we want to restore against
 ,		@ErrorMessage						VARCHAR(1000) = ''
 ,		@ProgressMessage					VARCHAR(1000) =	''
 ,		@BackupLocation						VARCHAR(1000) = '$(LocalBackupsFolder)'
 ,		@DataFileLocation					VARCHAR(4000) = '$(LocalDataFileFolder)'
 ,		@LogFileLocation					VARCHAR(4000) = '$(LocalLogFileFolder)'
-,		@BackupFile							VARCHAR(4000)
+,		@BackupFile						VARCHAR(4000)
 ,		@DatabaseName						VARCHAR(500)
 ,		@changeOwnerSQL						NVARCHAR(1000);
 
@@ -42,26 +42,26 @@ END
 
 CREATE TABLE #FileList
 (
-	LogicalName				VARCHAR(400) NULL,
+	LogicalName			VARCHAR(400) NULL,
 	PhysicalName			VARCHAR(4000) NULL,
-	Type					CHAR(1) NULL,
+	Type				CHAR(1) NULL,
 	FileGroupName			VARCHAR(100) NULL,
-	Size					NUMERIC(20,0) NULL,
-	MaxSize					NUMERIC(30,0) NULL,
-	FileId					BIGINT NULL,
-	CreateLSN				NUMERIC(20,0) NULL,
-	DropLSN					BIGINT NULL,
-	UniqueId				VARCHAR(255) NULL,
-	ReadOnlyLSN				BIGINT NULL,
+	Size				NUMERIC(20,0) NULL,
+	MaxSize				NUMERIC(30,0) NULL,
+	FileId				BIGINT NULL,
+	CreateLSN			NUMERIC(20,0) NULL,
+	DropLSN				BIGINT NULL,
+	UniqueId			VARCHAR(255) NULL,
+	ReadOnlyLSN			BIGINT NULL,
 	ReadWriteLSN			BIGINT NULL,
 	BackupSizeInBytes		NUMERIC(20,0) NULL,
 	SourceBlockSize			BIGINT NULL,
-	FileGroupId				BIGINT NULL,
+	FileGroupId			BIGINT NULL,
 	LogGroupGUID			UNIQUEIDENTIFIER NULL,
 	DifferentialBaseLSN		VARCHAR(255) NULL,
 	DifferentialBaseGUID	VARCHAR(255) NULL,
-	IsReadOnly				BIGINT NULL,
-	IsPresent				BIGINT NULL,
+	IsReadOnly			BIGINT NULL,
+	IsPresent			BIGINT NULL,
 	TDEThumbprint			VARBINARY
 )
 
