@@ -4,7 +4,7 @@ GO
 :SETVAR LocalBackupsFolder "C:\MSSQL\BACKUP"
 :SETVAR LocalDataFileFolder "C:\MSSQL\DATA"
 :SETVAR LocalLogFileFolder "C:\MSSQL\LOG"
-:SETVAR BackupExtension ".bck0"
+:SETVAR BackupExtension ".bck"
 
 DECLARE	@DropPrevious						INT	= 1
 ,		@IsDebug						INT = 1

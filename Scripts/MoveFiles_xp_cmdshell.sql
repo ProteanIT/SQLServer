@@ -14,8 +14,7 @@ DECLARE @EffectiveDate DATE = CASE datename(dw, @TodaysDate)
 		@STRDatePattern VARCHAR(8),
 		@MurexDatePattern VARCHAR(8),
 		@BloombergDatePattern VARCHAR(6),
-		@FileDatePattern VARCHAR(8),
-		@AnotherVariableTest_DeleteLater VARCHAR(MAX)
+		@FileDatePattern VARCHAR(8)
 
 
 SELECT	@MARSDatePattern = CONVERT(VARCHAR(8), @EffectiveDate, 112),
